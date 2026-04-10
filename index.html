@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini CRM | Future Interns</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lead Management System</h1>
+        
+        <div class="form-section">
+            <h3>Add New Lead</h3>
+            <form id="leadForm">
+                <input type="text" id="name" placeholder="Client Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <select id="status">
+                    <option value="New">New</option>
+                    <option value="Contacted">Contacted</option>
+                    <option value="Converted">Converted</option>
+                </select>
+                <button type="submit">Add Lead</button>
+            </form>
+        </div>
+
+        <div class="table-section">
+            <h3>Current Leads</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="leadTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
