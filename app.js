@@ -1,22 +1,40 @@
-const leadForm = document.getElementById('leadForm');
-const leadTableBody = document.getElementById('leadTableBody');
+document.addEventListener('DOMContentLoaded', () => {
+    const leadForm = document.getElementById('leadForm');
+    const leadList = document.getElementById('leadList');
 
-// Add Lead Function
-leadForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const status = document.getElementById('status').value;
+    // Check if form exists
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-    const row = document.createElement('tr');
-    row.innerHTML = `
-        <td>${name}</td>
-        <td>${email}</td>
-        <td><strong>${status}</strong></td>
-        <td><button class="delete-btn" onclick="this.parentElement.parentElement.remove()">Delete</button></td>
-    `;
+            // Get values from inputs
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const status = document.getElementById('status').value;
 
-    leadTableBody.appendChild(row);
-    leadForm.reset();
+            // Create new row
+            const row = document.createElement('tr');
+            
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${email}</td>
+                <td><span class="status-label">${status}</span></td>
+                <td><button class="delete-btn">DELETE</button></td>
+            `;
+
+            // Add delete event to the new button
+            row.querySelector('.delete-btn').addEventListener('click', () => {
+                row.remove();
+            });
+
+            // Append to table
+            leadList.appendChild(row);
+
+            // Reset form
+            leadForm.reset();
+            console.log("Lead Added Successfully: " + name);
+        });
+    } else {
+        console.error("Error: leadForm not found in HTML!");
+    }
 });

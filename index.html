@@ -1,45 +1,59 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini CRM | Future Interns</title>
+    <title>Lead Manager | Amrita Singh</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Lead Management System</h1>
-        
-        <div class="form-section">
-            <h3>Add New Lead</h3>
-            <form id="leadForm">
-                <input type="text" id="name" placeholder="Client Name" required>
-                <input type="email" id="email" placeholder="Email Address" required>
-                <select id="status">
-                    <option value="New">New</option>
-                    <option value="Contacted">Contacted</option>
-                    <option value="Converted">Converted</option>
-                </select>
-                <button type="submit">Add Lead</button>
-            </form>
-        </div>
+    <div class="grid-overlay"></div>
 
-        <div class="table-section">
-            <h3>Current Leads</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="leadTableBody">
-                    </tbody>
-            </table>
-        </div>
-    </div>
+    <nav>
+        <div class="logo">AMRITA<span>.</span>CRM</div>
+    </nav>
+
+    <main class="container">
+        <section class="form-section">
+            <div class="header">
+                <span class="status-tag">——— TASK 02</span>
+                <h1>Add New <span class="neon-text">Lead</span></h1>
+            </div>
+            
+            <form id="leadForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Client Name" required>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <select id="status">
+                        <option value="New">New Lead</option>
+                        <option value="Contacted">Contacted</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn" class="btn-mint">ADD LEAD +</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Current Leads</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leadList">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
     <script src="app.js"></script>
 </body>
 </html>
